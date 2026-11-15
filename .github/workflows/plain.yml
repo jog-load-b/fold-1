@@ -1,0 +1,20 @@
+name: plain
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo build
+  check:
+    runs-on: ubuntu-latest
+    env:
+      HEAD_REF: ${{ github.head_ref }}
+    steps:
+      - run: |
+          case "$HEAD_REF" in
+            *fail*) echo "failing on purpose"; exit 1 ;;
+          esac
+          echo ok
