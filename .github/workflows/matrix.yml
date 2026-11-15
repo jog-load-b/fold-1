@@ -1,0 +1,13 @@
+name: matrix
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  m:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        n: [1, 2]
+    steps:
+      - run: echo "m ${{ matrix.n }}"
