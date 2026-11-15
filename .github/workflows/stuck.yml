@@ -1,0 +1,10 @@
+name: stuck
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  wait:
+    runs-on: [self-hosted, fold-never]
+    steps:
+      - run: echo never
