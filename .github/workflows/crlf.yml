@@ -1,0 +1,8 @@
+name: crlf
+on:
+  workflow_dispatch:
+jobs:
+  j:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo crlf
